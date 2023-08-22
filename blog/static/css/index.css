@@ -1,0 +1,45 @@
+.section2{
+    width: 80%;
+}
+
+/* Estilo por defecto para dispositivos móviles */
+.left-card, .right-card {
+    width: 99%;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 640px) {
+    .left-card, .right-card {
+        width: 48%;
+    }
+}
+
+.left-card img{
+    border-radius: 7px 7px 0 0;
+}
+.container-content{
+    width: 80%;
+    padding: 60px 10px 30px 10px;
+    
+}
+
+.information-section{
+    width: 90%;
+}
+
+.iconos{
+    width: 50%;
+}
+
+.like:hover path,
+.github:hover path,
+.share:hover path {
+    fill: #D1C079;
+}
+
+.ima-post{
+    width: 35%;
+}
+.post-info{
+    width: 65%;
+}
