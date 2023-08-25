@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %} Profile {% endblock %}
+
+{% block style_custom %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/profile.css')}}">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="w-full ">
+    <div class="hero max-w-screen-xl mx-auto relative">
+        <img class="fondo-img w-fit" src="{{url_for('static', filename='images/fondo-profile.jpg')}}" alt="fondo">
+        <div class="container-info ml-auto mr-auto">
+            <div class="profile-image">
+                <!-- Aquí puedes insertar una imagen si lo deseas -->
+                <img src="{{url_for('static', filename='images/avatar.png')}}" alt="Profile">
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quidem tenetur excepturi quis! Facilis, molestiae. Iusto, consequuntur! Esse nesciunt, aspernatur, temporibus eaque vel natus quo rerum, quis reiciendis suscipit fugiat.</p>
+        </div>
+    
+    </div>
+</section>
+
+
+
+
+{% endblock %}
+
+{% block footer %} {% endblock %}

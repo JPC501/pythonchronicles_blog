@@ -1,12 +1,16 @@
 from flask import Flask, render_template, send_from_directory
+from .models import db
+from .models.auth_register import User
+
 
 import os
 
 
-def create_app():
+def create_app(enviroment):
     
     app = Flask(__name__,)
     
+    app.config.from_object(enviroment)
     
     
     
@@ -25,5 +29,9 @@ def create_app():
     from . import auth
     
     app.register_blueprint(auth.bp_auth)
+    
+    with app.app_context():
+        db.init_app(app)
+        db.create_all()
     
     return app

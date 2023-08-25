@@ -1299,6 +1299,11 @@ input:checked + .toggle-bg {
   width: 2rem;
 }
 
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .max-w-screen-xl {
   max-width: 1280px;
 }
