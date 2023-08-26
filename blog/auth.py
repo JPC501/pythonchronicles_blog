@@ -31,26 +31,6 @@ def login():
         
     return render_template('authentication/login.html', error=error)
 
-#keep user logged
-
-@bp_auth.before_app_request
-def load_user():
-    user_id = session.get('user.id')
-
-    if user_id == None:
-        g.user = None
-    else:
-        g.user = User.query.get_or_404(user_id)
-        
-# close session
-
-@bp_auth.route('/logout')
-def logout():
-    session.clear()
-    return redirect(url_for('index'))
-
-
-
 #register form
 @bp_auth.route('/register', methods=['GET', 'POST'])
 def register():
@@ -79,6 +59,28 @@ def register():
     
     return render_template('authentication/register.html')
 
+#keep user logged
+
+@bp_auth.before_app_request
+def load_user():
+    user_id = session.get('user.id')
+
+    if user_id == None:
+        g.user = None
+    else:
+        g.user = User.query.get_or_404(user_id)
+        
+# close session
+
+@bp_auth.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
+
+
+
+
+
 
 import functools
 #protecting the views
@@ -96,6 +98,7 @@ def login_required(view):
 def profile():
     return render_template('authentication/profile.html')
 
+#! pendiente eliminar esto y ponerlo en posts
 @bp_auth.route('/create_post', methods=['GET', 'POST'])
 def create_post():
     return render_template('create_post.html')
