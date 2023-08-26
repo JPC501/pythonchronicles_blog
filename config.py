@@ -7,6 +7,7 @@ class DevelopmentConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:joan50%401$23@localhost/pythonchronicles'
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECRET_KEY = 'dev'
     
 configu = {
     'development': DevelopmentConfig

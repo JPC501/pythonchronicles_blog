@@ -36,10 +36,15 @@
                 <h1 class="text-xl font-bold leading-tight tracking-tight  md:text-2xl ">
                     Crear nueva cuenta
                 </h1>
+
+                {% for mensage in get_flashed_messages() %}
+                <p class="alert w-full text-red-500 text-sm">{{mensage}}</p>
+                {% endfor %}
+
                 <form class="space-y-4 md:space-y-6" action="#" method="POST">
                     <!-- name -->
                     <div>
-                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Tu nombre</label>
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Tu nombre de usuario</label>
                         <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="nombre" required="">
                     </div>
                     <!-- email -->

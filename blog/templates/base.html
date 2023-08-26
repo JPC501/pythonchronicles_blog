@@ -35,10 +35,10 @@
                 </a>
 
 
-                {% if user %} <!-- condicional para cambiar nav -->
+                {% if not g.user %} <!-- condicional para cambiar nav -->
                 <div class="flex items-center md:order-2 ">
-                    <a href="#" class="text-slate-50 hover:bg-amber-200 hover:text-black focus:ring-4 focus:ring-yellow-100  font-bold rounded-lg text-sm md:text-md px-1 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2  focus:outline-none ">Login</a>
-                    <a href="#" class=" text-black bg-amber-200 hover:bg-gold hover:text-slate-50 focus:ring-4 focus:ring-yellow-100 font-bold rounded-lg text-sm md:text-md px-4 py-2 md:px-5 md:py-2.5 mr-2 md:mr-2">Sign up</a>
+                    <a href="{{url_for('auth.login')}}" class="text-slate-50 hover:bg-amber-200 hover:text-black focus:ring-4 focus:ring-yellow-100  font-bold rounded-lg text-sm md:text-md px-1 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2  focus:outline-none ">Login</a>
+                    <a href="{{url_for('auth.register')}}" class=" text-black bg-amber-200 hover:bg-gold hover:text-slate-50 focus:ring-4 focus:ring-yellow-100 font-bold rounded-lg text-sm md:text-md px-4 py-2 md:px-5 md:py-2.5 mr-2 md:mr-2">Sign up</a>
                     
                 {% else %}
                 <!-- loged user -->
@@ -47,13 +47,13 @@
                     <img class="w-10 h-10 rounded-full" src="#" alt="user photo">
                     </button>
                     <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow " id="user-dropdown">
-                        <div class="px-4 py-3">
+                        <div class="px-4 z-50 py-3">
                             <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
                             <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
                         </div>
-                        <ul class="py-2" aria-labelledby="user-menu-button">
+                        <ul class="py-2 z-50" aria-labelledby="user-menu-button">
                             <li>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+                                <a href="{{url_for('auth.profile')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
                             </li>
                             <li>
                                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
@@ -62,7 +62,7 @@
                                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
                             </li>
                             <li>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                                <a href="{{ url_for('auth.logout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">cerrar sesion</a>
                             </li>
                         </ul>
                     </div>
