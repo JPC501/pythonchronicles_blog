@@ -2,7 +2,7 @@
 module.exports = {
   mode:"jit",
   content: ['./blog/templates/*.html',
-  './blog/static/js/.js', "./node_modules/flowbite/*.js"],
+  './blog/static/js/.js'],
   
   theme: {
     extend: {
@@ -22,6 +22,5 @@ module.exports = {
     },
   },
   
-  plugins: [require("flowbite/plugin")],
 }
 

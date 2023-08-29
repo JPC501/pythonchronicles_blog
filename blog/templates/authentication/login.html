@@ -2,6 +2,10 @@
 
 {% block title %} login {% endblock %}
 
+{% block style_custom %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/auth.css')}}">
+{% endblock %}
+
 {% block header %}
 <nav class=" w-full">
     <div class="nav-div  max-w-screen-xl mx-auto px-1 py-3">
@@ -28,43 +32,31 @@
 {% endblock %}
 
 {% block content %}
-<section class="">
-    <div class="flex max-w-screen-xl flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
-        <div class="w-full bg-gray-100 rounded-lg shadow-lg  md:mt-0 sm:max-w-md xl:p-0 ">
-            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                <h1 class="text-xl font-bold leading-tight tracking-tight  md:text-2xl ">
-                    Ingresar a tu cuenta
-                </h1>
-                {% if error %}
-                <p class="alert w-full text-red-500 text-sm">{{error}}</p>
-                {% endif %}
-                <form class="space-y-4 md:space-y-6" method="POST">
-                    <div>
-                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tu Correo</label>
-                        <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="nombre@email.com" required="">
-                    </div>
-                    <div>
-                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Conttraseña</label>
-                        <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " required="">
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-start">
-                            <!-- <div class="flex  items-center h-5">
-                                <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 " required="">
-                            </div> -->
-                            <!-- <div class="ml-3 text-sm">
-                                <label for="remember" class="text-gray-500 dark:text-gray-300">Recordarme</label>
-                            </div> -->
-                        </div>
-                        <a href="#" class="hidden text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Olvido su contraseña?</a>
-                    </div>
-                    <button type="submit" class=" w-full text-white bg-gradient-to-r from-blue-button-l to-blue-button-r hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 0 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-6 mb-9">Iniciar sesion</button>
+<section>
+    <div class="form-container max-w-screen-xl mx-auto mt-12">
+        <div class="card-form rounded-lg md:w-1/2  mx-auto flex-col pt-4 px-5">
+            <h1 class="text-xl font-bold leading-tight tracking-tight mb-3  md:text-2xl ">
+                Ingresar a tu cuenta
+            </h1>
+            {% if error %}
+            <p class="alert w-full text-sm">{{error}}</p>
+            {% endif %}
+            <form class="" method="POST">
+                <div class="">
+                    <label for="email" class="block mb-2 mt-3 text-sm font-medium text-black">Tu Correo</label>
+                    <input type="email" name="email" id="email" class="pl-3 bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5" placeholder="nombre@email.com" required="">
+                </div>
+                <div>
+                    <label for="password" class="block mb-2 mt-3 text-sm font-medium text-black">Conttraseña</label>
+                    <input  type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border pl-3 border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " required="">
+                </div>
+
+                <button type="submit" class=" w-full text-white bg-gradient-to-r from-blue-button-l to-blue-button-r hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 0 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-6 mb-9">Iniciar sesion</button>
                     <p class="text-sm font-light text-gray-500 ">
                         No tienes una cuenta? 
-                        <a href="{{url_for('auth.register')}}" class="font-medium text-primary-600 hover:underline">Crear cuenta</a>
+                        <a href="{{url_for('auth.register')}}" class="font-medium text-black hover:underline">Crear cuenta</a>
                     </p>
-                </form>
-            </div>
+            </form>
         </div>
     </div>
 </section>

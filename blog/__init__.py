@@ -26,10 +26,6 @@ def create_app(enviroment):
         return render_template('index.html', user=user)
     
     
-    # redirect node-flowbite files
-    @app.route('/node_modules/<path:filename>')
-    def serve_node_modules(filename):
-        return send_from_directory(os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', 'node_modules'), filename)
     
     #blueprint register
     from . import auth

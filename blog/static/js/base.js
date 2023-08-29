@@ -21,3 +21,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdownButton = document.getElementById("dropdown-button");
+    const userDropdown = document.getElementById("user-dropdown");
+
+    let isOpen = false;
+
+    dropdownButton.addEventListener("click", function () {
+        isOpen = !isOpen;
+        userDropdown.style.display = isOpen ? "block" : "none";
+    });
+});
