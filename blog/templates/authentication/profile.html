@@ -7,7 +7,40 @@
 
 
 {% block content %}
+<section class="max-w-screen-xl mx-auto">
+    <div class="profile-container mx-auto column  ">
+        <div class="img-container  w-full flex justify-center mt-6 ">
+            <img class="img-avatar " src="{{url_for('static', filename='images/avatar.png')}}" alt="">
+        </div> 
+        <a class="profile flex justify-center" href="{{url_for('auth.login')}}">Editar Perfil</a>
+        <h1 class="text-center mt- ">{{ g.user.name.capitalize()}}</h1>
+        <div class="social-media-links mt-3 flex justify-evenly w-2/5 mx-auto">
+            <a href="#">
+                <img class="" src="{{url_for('static', filename='images/github.svg')}}" alt="github-logo">
+            </a>
+            <a href="#">
+                <img class="" src="{{url_for('static', filename='images/website.svg')}}" alt="github-logo">
+            </a>
+            <a href="#">
+                <img class="" src="{{url_for('static', filename='images/twitter.svg')}}" alt="github-logo">
+            </a>
+        </div>
 
+            <div class="top-data flex justify-center mt-8 pb-5 ">
+                <div class="text-center mr-3">
+                    <span>19</span>
+                    <p>posts</p>
+                </div>
+                <div class="text-center ml-3 ">
+                    <span>5</span>
+                    <p>respuestas</p>
+                </div>
+            </div>
+
+        
+    </div>
+
+</section>
 
 
 

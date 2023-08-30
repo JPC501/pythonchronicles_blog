@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} base {% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dist/output.css') }}">
-    
-
     <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
     
     {% block style_custom %} 
@@ -49,7 +47,7 @@
                     </button>
                     <div class="z-50 hidden absolute  my-4  bg-white divide-y  rounded-lg shadow " id="user-dropdown" >
                         <div class="px-4 z-50 py-3">
-                            <span class="block text-sm mb-1 text-black ">{{g.user.name}}</span>
+                            <span class="block text-sm mb-1 text-black ">{{g.user.name.capitalize()}}</span>
                             <span class="block text-sm text-black">{{g.user.email}}</span>
                         </div>
                         <ul class="py-2 z-50">
