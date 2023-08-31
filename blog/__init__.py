@@ -22,8 +22,7 @@ def create_app(enviroment):
     
     @app.route('/')
     def index():
-        user = True
-        return render_template('index.html', user=user)
+        return render_template('index.html')
     
     
     
@@ -31,6 +30,12 @@ def create_app(enviroment):
     from . import auth
     
     app.register_blueprint(auth.bp_auth)
+    
+    from . import profile
+    
+    app.register_blueprint(profile.pf)
+    
+    
     
     # db create
     with app.app_context():

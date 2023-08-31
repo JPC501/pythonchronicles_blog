@@ -92,11 +92,7 @@ def login_required(view):
         return view(**kwargs)
     return wrapped_view
 
-#prifile users
-@bp_auth.route('/profile', methods=['GET', 'POST'])
-@login_required
-def profile():
-    return render_template('authentication/profile.html')
+
 
 #! pendiente eliminar esto y ponerlo en posts
 @bp_auth.route('/create_post', methods=['GET', 'POST'])
