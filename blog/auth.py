@@ -84,6 +84,7 @@ def logout():
 
 import functools
 #protecting the views
+
 def login_required(view):
     @functools.wraps(view)
     def wrapped_view(**kwargs):
