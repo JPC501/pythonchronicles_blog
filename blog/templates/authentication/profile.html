@@ -12,7 +12,7 @@
         <div class="img-container  w-full flex justify-center mt-6 ">
             <img class="img-avatar " src="{{url_for('static', filename='images/avatar.png')}}" alt="">
         </div> 
-        <a class="profile flex justify-center" href="{{url_for('user.edit_profile')}}">Editar Perfil</a>
+        <a class="profile flex justify-center" href="{{url_for('auth.edit_profile', id=user.id)}}">Editar Perfil</a>
         <h1 class="text-center mt- ">{{ g.user.name.capitalize()}}</h1>
         <div class="social-media-links mt-3 flex justify-evenly w-2/5 mx-auto">
             <a href="#">

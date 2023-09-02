@@ -31,10 +31,6 @@ def create_app(enviroment):
     
     app.register_blueprint(auth.bp_auth)
     
-    from . import profile
-    
-    app.register_blueprint(profile.pf)
-    
     
     
     # db create
