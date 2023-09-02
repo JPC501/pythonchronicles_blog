@@ -10,7 +10,11 @@
 <section class="max-w-screen-xl mx-auto">
     <div class="profile-container mx-auto column  ">
         <div class="img-container  w-full flex justify-center mt-6 ">
-            <img class="img-avatar " src="{{url_for('static', filename='images/avatar.png')}}" alt="">
+            {% if not g.user.photo %}
+            <img class="img-avatar object-cover rounded-full" src="{{url_for('static', filename='images/avatar.png')}}" alt="">
+            {% else %}
+            <img class="img-avatar object-cover rounded-full " src="{{url_for('static', filename=g.user.photo)}}" alt="">
+            {% endif %}
         </div> 
         <a class="profile flex justify-center" href="{{url_for('auth.edit_profile', id=user.id)}}">Editar Perfil</a>
         <h1 class="text-center mt- ">{{ g.user.name.capitalize()}}</h1>

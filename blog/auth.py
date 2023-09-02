@@ -83,13 +83,6 @@ def login_required(view):
         return view(**kwargs)
     return wrapped_view
 
-#show profile 
-@bp_auth.route('/profile', methods=['GET'])
-@login_required
-def profile():
-    user = User.query.get_or_404(g.user.id)
-    return render_template('authentication/profile.html', user=user)
-
 
 #edit profile 
 @bp_auth.route('/edit_profile/<int:id>', methods=['GET', 'POST'])
@@ -110,6 +103,12 @@ def edit_profile(id):
         else:
             user.password = generate_password_hash(password)
             
+        if request.files['image']:
+            photo = request.files['image']
+            photo.save(f'blog/static/media/{secure_filename(photo.filename)}')
+            user.photo = f'media/{secure_filename(photo.filename)}'
+            db.session.commit()
+            
         if name is not None and name != "":
             user.name = name
         if email is not None and email != "":
@@ -123,6 +122,23 @@ def edit_profile(id):
             return redirect(url_for('auth.profile'))
         
     return render_template('authentication/edit_profile.html')
+
+# load image
+
+from werkzeug.utils import secure_filename
+
+def get_picture(id):
+    user = User.query.get_or_404(g.user.id)
+    return user.photo if user.photo is not None else None
+
+#show profile 
+@bp_auth.route('/profile', methods=['GET'])
+@login_required
+def profile():
+    user = User.query.get_or_404(g.user.id)
+    photo = get_picture(id)
+    return render_template('authentication/profile.html', user=user, photo=photo)
+
         
 # close session
 
@@ -130,6 +146,8 @@ def edit_profile(id):
 def logout():
     session.clear()
     return redirect(url_for('index'))
+    
+    
 
 
 

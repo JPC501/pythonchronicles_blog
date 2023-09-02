@@ -14,7 +14,7 @@
             <img class="img-avatar " src="{{url_for('static', filename='images/avatar.png')}}" alt="">
         </div> 
         
-        <form class="card-form mx-auto" method="POST">
+        <form class="card-form mx-auto" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="image" class="  block mb-2 text-sm font-medium text-gray-900">Nueva Foto</label>
                 <input type="file" name="image" id="image" class=" file-input  text-gray-900  sm:text-sm rounded-md  block ">

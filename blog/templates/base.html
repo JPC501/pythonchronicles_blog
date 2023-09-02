@@ -43,7 +43,11 @@
                 <!-- loged user -->
                 <div class=" md:order-3 mr-3 md:mr-20 flex ml-20">
                     <button type="button" id="dropdown-button" class=" mr-3 block w-10 h-10 border-2 focus:outline-none text-sm rounded-full focus:ring-2 focus:ring-gold" >
-                    <img class="h-full w-full object-cover" src="{{url_for('static', filename='images/avatar.png')}}" alt="user photo">
+                    {% if not g.user.photo %}
+                    <img class="h-full w-full object-cover rounded-full" src="{{url_for('static', filename='images/avatar.png')}}" alt="user photo">
+                    {% else %}
+                    <img class="h-full w-full object-cover rounded-full" src="{{url_for('static', filename=g.user.photo)}}" alt="user photo">
+                    {% endif %}
                     </button>
                     <div class="z-50 hidden absolute  my-4  bg-white divide-y  rounded-lg shadow " id="user-dropdown" >
                         <div class="px-4 z-50 py-3">
