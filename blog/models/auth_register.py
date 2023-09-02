@@ -8,6 +8,9 @@ class User(db.Model):
     email = db.Column(db.String(50), nullable=False)
     password = db.Column(db.String(500), nullable=False)
     photo = db.Column(db.String(200))
+    github_url = db.Column(db.String(200))
+    twitter_url = db.Column(db.String(200))
+    personal_website = db.Column(db.String(200))
     
     def __str__(self):
         return self.name

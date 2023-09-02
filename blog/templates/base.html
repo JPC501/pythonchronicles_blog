@@ -44,9 +44,9 @@
                 <div class=" md:order-3 mr-3 md:mr-20 flex ml-20">
                     <button type="button" id="dropdown-button" class=" mr-3 block w-10 h-10 border-2 focus:outline-none text-sm rounded-full focus:ring-2 focus:ring-gold" >
                     {% if not g.user.photo %}
-                    <img class="h-full w-full object-cover rounded-full" src="{{url_for('static', filename='images/avatar.png')}}" alt="user photo">
+                    <img class="h-full w-full bg-white object-cover rounded-full" src="{{url_for('static', filename='images/avatar.png')}}" alt="user photo">
                     {% else %}
-                    <img class="h-full w-full object-cover rounded-full" src="{{url_for('static', filename=g.user.photo)}}" alt="user photo">
+                    <img class="h-full w-full object-cover bg-white rounded-full" src="{{url_for('static', filename=g.user.photo)}}" alt="user photo">
                     {% endif %}
                     </button>
                     <div class="z-50 hidden absolute  my-4  bg-white divide-y  rounded-lg shadow " id="user-dropdown" >
@@ -79,7 +79,7 @@
                 <div id="mega-menu-icons" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
                     <ul class="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0">
                         <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-slate-50 border-b border-gray-100 font-bold hover:text-amber-200 md:border-0 tracking-wider md:p-0 " aria-current="page">Home</a>
+                            <a href="{{url_for('index')}}" class="block py-2 pl-3 pr-4 text-slate-50 border-b border-gray-100 font-bold hover:text-amber-200 md:border-0 tracking-wider md:p-0 " aria-current="page">Home</a>
                         </li>
                         <li>
                             <button id="mega-menu-icons-dropdown-button" data-dropdown-toggle="mega-menu-icons-dropdown" class="flex  items-center justify-between w-full py-2 pl-3 pr-4 font-md font-bold text-slate-50 border-b tracking-wider hover:text-amber-200 border-gray-100 md:w-auto  md:border-0  md:p-0">
