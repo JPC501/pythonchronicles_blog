@@ -3,6 +3,9 @@
 
 {% block style_custom %}
     <link rel="stylesheet" href="{{url_for('static', filename='css/profile.css')}}">
+    <link
+	href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+	rel="stylesheet">
 {% endblock %}
 
 
@@ -30,14 +33,47 @@
             </a>
         </div>
 
-            <div class="top-data flex justify-center mt-8 pb-5 ">
-                <div class="text-center mr-3">
-                    <span>19</span>
-                    <p>posts</p>
-                </div>
-                <div class="text-center ml-3 ">
-                    <span>5</span>
-                    <p>respuestas</p>
+        <div class="top-data flex justify-center mt-8 pb-5 ">
+            <div class="text-center mr-3">
+                <span>{{post_count}}</span>
+                <p>posts</p>
+            </div>
+            <div class="text-center ml-3 ">
+                <span>0</span>
+                <p>respuestas</p>
+            </div>
+        </div>
+
+            <div class="last-posts mt-6 ">
+                <h2 class="text-center  font-semibold text-2xl ">Blogs creados</h2>
+                <div class="main-container">
+                    <div class="table-container  ">
+                        <div class="table-wrapper shadow-lg">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="table-header">Id</th>
+                                        <th class="table-header">Titulo</th>
+                                        <th class="table-header">Fecha</th>
+                                        <th class="table-header">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for post in posts %}
+                                    <tr class="table-row">
+                                        <td class="table-cell font-semibold">{{post.id}}</td>
+                                        <td class="table-cell font-semibold">{{post.title.capitalize()}}</td>
+                                        <td class="table-cell font-semibold">{{post.created}}</td>
+                                        <td class="table-cell">
+                                            <a href="#" class="cell-icon greene"><i class="material-icons-outlined">edit</i></a>
+                                            <a href="#" class="cell-icon redi"><i class="material-icons-round">delete_outline</i></a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
 

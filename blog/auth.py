@@ -3,6 +3,7 @@ from .models.auth_register import User
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from . import db
+from.models.posts import Posts
 
 bp_auth = Blueprint('auth', __name__, url_prefix='/auth')
 
@@ -88,7 +89,12 @@ def login_required(view):
 def profile():
     user = User.query.get_or_404(g.user.id)
     photo = get_picture(id)
-    return render_template('authentication/profile.html', user=user, photo=photo)
+    posts = Posts.query.filter_by(author=g.user.id).all()
+    post_count = Posts.query.filter_by(author=g.user.id).count()
+    
+    return render_template('authentication/profile.html', 
+                            user=user, photo=photo, 
+                            posts=posts, post_count=post_count)
 
 
 # edit profile
