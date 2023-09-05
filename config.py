@@ -5,6 +5,7 @@ class Config():
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = 'dev'
     PERMANENT_SESSION_LIFETIME = timedelta(minutes=20)
+    CKEDITOR_PKG_TYPE = 'full'
     
 class DevelopmentConfig(Config):
     DEBUG = True

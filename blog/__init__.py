@@ -2,6 +2,7 @@ from flask import Flask, render_template, send_from_directory, session
 from .models import db
 from .models.auth_register import User
 from .models.posts import Posts
+from flask_ckeditor import CKEditor
 
 
 import os
@@ -10,6 +11,8 @@ import os
 def create_app(enviroment):
     
     app = Flask(__name__,)
+    
+    ckeditor = CKEditor(app)
     
     # config enviroment
     app.config.from_object(enviroment)
