@@ -32,6 +32,10 @@ def create_app(enviroment):
     
     app.register_blueprint(auth.bp_auth)
     
+    from . import posts
+    
+    app.register_blueprint(posts.bp_post)
+    
     
     
     # db create

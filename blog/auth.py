@@ -153,10 +153,3 @@ def logout():
     
     
 
-
-
-
-#! pendiente eliminar esto y ponerlo en posts
-@bp_auth.route('/create_post', methods=['GET', 'POST'])
-def create_post():
-    return render_template('create_post.html')

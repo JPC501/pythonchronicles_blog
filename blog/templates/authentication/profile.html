@@ -52,7 +52,7 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th class="table-header">Id</th>
+                                        <th class="table-header ">Id</th>
                                         <th class="table-header">Titulo</th>
                                         <th class="table-header">Fecha</th>
                                         <th class="table-header">Acciones</th>
@@ -61,9 +61,9 @@
                                 <tbody>
                                     {% for post in posts %}
                                     <tr class="table-row">
-                                        <td class="table-cell font-semibold">{{post.id}}</td>
-                                        <td class="table-cell font-semibold">{{post.title.capitalize()}}</td>
-                                        <td class="table-cell font-semibold">{{post.created}}</td>
+                                        <td class="table-cell ">{{post.id}}</td>
+                                        <td class="table-cell ">{{post.title.capitalize()}}</td>
+                                        <td class="table-cell ">{{post.created}}</td>
                                         <td class="table-cell">
                                             <a href="#" class="cell-icon greene"><i class="material-icons-outlined">edit</i></a>
                                             <a href="#" class="cell-icon redi"><i class="material-icons-round">delete_outline</i></a>
