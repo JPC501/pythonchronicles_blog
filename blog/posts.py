@@ -32,7 +32,12 @@ def create_post():
             error = 'La url del post ya existe'
         flash(error)
         
-        
-        
-        
     return render_template('create_post.html')
+
+@bp_post.route('/delete/<int:id>')
+@login_required
+def delete(id):
+    post = Posts.query.get_or_404(id)
+    db.session.delete(post)
+    db.session.commit()
+    return redirect(url_for('auth.profile'))
