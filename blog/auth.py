@@ -94,7 +94,7 @@ def profile():
     
     return render_template('authentication/profile.html', 
                             user=user, photo=photo, 
-                            posts=posts, post_count=post_count)
+                            posts=posts, post_count=post_count,)
 
 
 # edit profile

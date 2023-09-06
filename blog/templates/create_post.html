@@ -11,20 +11,23 @@
 <section class="max-w-screen-xl  mx-auto">
     <div class="container-form mx-auto mt-10 column ">  
             <form class="card-form mx-auto" method="POST" enctype="multipart/form-data">
+
         
                 <div>
                     <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Titulo del Post</label>
                     <input type="text" name="title" id="title" class="pl-3 bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Titulo">
                 </div>
                 <div>
-                    <label for="url" class="block mt-2 mb-2 text-sm font-medium text-gray-900">Url del blog</label>
-                    <input type="text" name="url" id="url" class="pl-3 bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="Url">
-                </div>
-                <div>
                     <label for="info" class="block mb-2 mt-3 text-sm font-medium text-black">Descripcion</label>
                     <textarea name="info" id="info" class="pl-3 bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" cols="30" rows="5" placeholder="Breve descripcion"></textarea>
                 </div>
-                
+                <div>
+                    <label for="url" class="block mt-2 mb-2 text-sm font-medium text-gray-900">Url del blog</label>
+                    <input type="text" name="url" id="url" class="pl-3 bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="Este_es_un_ejemplo_de_nombre_de_url">
+                    {% if error %}
+                    <p class="w-full text-red-500 text-sm">{{error}}</p>
+                    {% endif %}
+                </div>
                 <div>
                     <label for="content" class="block mb-2 mt-3 text-sm font-medium text-black">contenido</label>
                     {{ ckeditor.create() }}
