@@ -56,7 +56,7 @@ def login():
             session.clear()
             session['user.id'] = user.id
             
-            return redirect(url_for('index'))
+            return redirect(url_for('main.index'))
         
     return render_template('authentication/login.html', error=error)
 

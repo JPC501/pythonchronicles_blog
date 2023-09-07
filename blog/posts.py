@@ -32,8 +32,27 @@ def create_post():
             error = 'La url del post ya existe'
         flash(error)
         
-    return render_template('create_post.html')
+    return render_template('authentication/create_post.html')
 
+#edit post
+@bp_post.route('/edit_post/<int:id>', methods=['GET', 'POST'])
+@login_required
+def edit_post(id):
+    post = Posts.query.get_or_404(id)
+    
+    if request.method == 'POST':
+        post.title = request.form.get('title')
+        post.info = request.form.get('info')
+        post.content_post = request.form.get('ckeditor')
+        
+        db.session.commit()
+        flash('El post se actualizo correctamente')
+        return redirect(url_for('auth.profile'))
+    
+    return render_template('authentication/edit_post.html', post=post)
+
+
+#delete post
 @bp_post.route('/delete/<int:id>')
 @login_required
 def delete(id):

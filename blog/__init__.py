@@ -24,9 +24,6 @@ def create_app(enviroment):
     
     
     
-    @app.route('/')
-    def index():
-        return render_template('index.html')
     
     
     
@@ -38,6 +35,10 @@ def create_app(enviroment):
     from . import posts
     
     app.register_blueprint(posts.bp_post)
+    
+    from .main import bp_main
+    
+    app.register_blueprint(bp_main)
     
     
     

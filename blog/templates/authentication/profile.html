@@ -65,7 +65,7 @@
                                         <td class="table-cell ">{{post.title.capitalize()}}</td>
                                         <td class="table-cell ">{{post.created.strftime('%Y-%m-%d %H:%M:%S')}}</td>
                                         <td class="table-cell">
-                                            <a href="#" class="cell-icon greene"><i class="material-icons-outlined">edit</i>
+                                            <a href="{{url_for('post.edit_post', id=post.id)}}" class="cell-icon greene"><i class="material-icons-outlined">edit</i>
                                             </a>
 
                                             <a href="{{url_for('post.delete', id=post.id)}}" class="cell-icon redi"><i class="material-icons-round">delete_outline</i></a>

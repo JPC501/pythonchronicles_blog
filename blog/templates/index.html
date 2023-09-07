@@ -143,53 +143,24 @@
             </div>
         </div>
         <hr class="my-6 max-w-screen-xl mx-auto "/>
+
+        {% for posts in post %}
         <div class="post flex">
             <img class="ima-post md:h-22 mr-3" src="{{url_for('static', filename='images/compu.png')}}" alt="">
             <div class="post-info md:p-3">
                 <a href="#">
-                    <h5 class=" mb-3 text-sm md:text-xl font-bold">Titulo de otro pedo</h5>
+                    <h5 class=" mb-3 text-sm md:text-xl font-bold">{{posts.title}}</h5>
                 </a>
-                <p class="hidden md:block ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit nam illo tempore accusamus iste quia enim natus amet quis suscipit nisi facilis temporibus fuga, ducimus, cum sunt voluptatibus debitis corporis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit nam illo tempore accusamus iste quia enim natus amet quis suscipit nisi facilis temporibus fuga, ducimus, cum sunt voluptatibus debitis corporis?</p>
+                <p class="hidden md:block ">{{ posts.content_post[:400] | safe}}</p>
                 <span class=" text-sm md:text-xl text-gray-500">Creado por: Nombre</span>
             </div>
         </div>
         <hr class="my-6 max-w-screen-xl mx-auto "/>
-        <div class="post flex">
-            <img class="ima-post md:h-22 mr-3" src="{{url_for('static', filename='images/compu.png')}}" alt="">
-            <div class="post-info md:p-3">
-                <a href="#">
-                    <h5 class=" mb-3 text-sm md:text-xl font-bold">Titulo de otro pedo</h5>
-                </a>
-                <p class="hidden md:block ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit nam illo tempore accusamus iste quia enim natus amet quis suscipit nisi facilis temporibus fuga, ducimus, cum sunt voluptatibus debitis corporis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit nam illo tempore accusamus iste quia enim natus amet quis suscipit nisi facilis temporibus fuga, ducimus, cum sunt voluptatibus debitis corporis?</p>
-                <span class=" text-sm md:text-xl text-gray-500">Creado por: Nombre</span>
-            </div>
-        </div>
-        <hr class="my-6 max-w-screen-xl mx-auto "/>
-        <div class="post flex">
-            <img class="ima-post md:h-22 mr-3" src="{{url_for('static', filename='images/compu.png')}}" alt="">
-            <div class="post-info md:p-3">
-                <a href="#">
-                    <h5 class=" mb-3 text-sm md:text-xl font-bold">Titulo de otro pedo</h5>
-                </a>
-                <p class="hidden md:block ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit nam illo tempore accusamus iste quia enim natus amet quis suscipit nisi facilis temporibus fuga, ducimus, cum sunt voluptatibus debitis corporis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit nam illo tempore accusamus iste quia enim natus amet quis suscipit nisi facilis temporibus fuga, ducimus, cum sunt voluptatibus debitis corporis?</p>
-                <span class=" text-sm md:text-xl text-gray-500">Creado por: Nombre</span>
-            </div>
-        </div>
-        <hr class="my-6 max-w-screen-xl mx-auto "/>
-        <div class="post flex">
-            <img class="ima-post h-22 mr-3" src="{{url_for('static', filename='images/compu.png')}}" alt="">
-            <div class="post-info p-3">
-                <a href="#">
-                    <h5 class="text-xl font-bold">Titulo de otro pedo</h5>
-                </a>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit nam illo tempore accusamus iste quia enim natus amet quis suscipit nisi facilis temporibus fuga, ducimus, cum sunt voluptatibus debitis corporis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit nam illo tempore accusamus iste quia enim natus amet quis suscipit nisi facilis temporibus fuga, ducimus, cum sunt voluptatibus debitis corporis?</p>
-                <span class="mt-3">Creado por: Nombre</span>
-            </div>
-            
-        </div>
-        <hr class="my-6 max-w-screen-xl mx-auto "/>
+        {% endfor %}
+        
     
     </div>
+    
     
 </section>
 
