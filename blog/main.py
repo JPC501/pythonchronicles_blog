@@ -2,17 +2,33 @@ from flask import Blueprint, render_template, request, g
 
 from .models.auth_register import User
 from .models.posts import Posts
-import random
+from sqlalchemy import func
 
 
 bp_main = Blueprint('main', __name__)
 
+#identify post user id 
 def get_user(id):
     post_user = User.query.get_or_404(id)
     return post_user
 
+# random 2 posts on index
+def best_posts1():
+    posts_to_show1 = Posts.query.order_by(func.random()).limit(1).all()
+    return posts_to_show1
+
+
+def best_posts2():
+    posts_to_show1 = Posts.query.order_by(func.random()).limit(1).all()
+    return posts_to_show1
+
+    
+
 @bp_main.route('/', methods=['GET', 'POST'])
 def index():
     post = Posts.query.all()
-    
-    return render_template('index.html', post=post, get_user=get_user)
+    return render_template('index.html', post=post, 
+                            get_user=get_user, 
+                            best_posts1=best_posts1, 
+                            best_posts2=best_posts2)
+
