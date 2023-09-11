@@ -152,7 +152,7 @@
                     <h5 class=" mb-3 text-sm md:text-xl font-bold">{{posts.title}}</h5>
                 </a>
                 <p class="hidden md:block ">{{ posts.content_post[:400] | safe}}</p>
-                <span class=" text-sm md:text-xl text-gray-500">Creado por: Nombre</span>
+                <span class=" text-sm md:text-xl text-gray-500">Creado por: {{ get_user(posts.author).name }}</span>
             </div>
         </div>
         <hr class="my-6 max-w-screen-xl mx-auto "/>

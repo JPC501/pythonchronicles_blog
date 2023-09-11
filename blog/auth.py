@@ -149,7 +149,7 @@ def get_picture(id):
 @bp_auth.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('index'))
+    return redirect(url_for('main.index'))
     
     
 

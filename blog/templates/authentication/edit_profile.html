@@ -11,7 +11,8 @@
 <section class="max-w-screen-xl mx-auto">
     <div class="profile-container mx-auto column md:flex ">
         <div class="img-container  w-full flex  md:block justify-center mt-6 ">
-            <img class="img-avatar " src="{{url_for('static', filename=g.user.photo)}}" alt="">
+            <img class="img-avatar" src="{{ url_for('static', filename=g.user.photo) if g.user.photo else url_for('static', filename='avatar.png') }}" alt="">
+
         </div> 
         
         <form class="card-form mx-auto" method="POST" enctype="multipart/form-data">
