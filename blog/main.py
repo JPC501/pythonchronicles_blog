@@ -31,4 +31,10 @@ def index():
                             get_user=get_user, 
                             best_posts1=best_posts1, 
                             best_posts2=best_posts2)
+    
+@bp_main.route('/article/<url>')
+def show_article(url):
+    post_view = Posts.query.filter_by(url=url).first()
+    return render_template('article.html', post_view=post_view, 
+                            get_user=get_user)
 

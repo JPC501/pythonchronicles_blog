@@ -157,6 +157,7 @@
                 </a>
                 <p class="hidden md:block ">{{ posts.content_post[:150] | safe}}</p>
                 <span class=" text-sm md:text-xl text-gray-500">Creado por: {{ get_user(posts.author).name }}</span>
+                <p><a href="{{url_for('main.show_article', url=posts.url)}}" class="enlase-post text-sky-700">Ir al post -></a></p>
             </div>
         </div>
         <hr class="my-6 max-w-screen-xl mx-auto "/>
