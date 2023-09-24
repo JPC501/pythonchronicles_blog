@@ -31,7 +31,7 @@ def best_posts2():
 def index():
     post = Posts.query.all()
     return render_template('index.html', post=post,
-                            get_user=get_user, 
+                            get_user=get_user,
                             best_posts1=best_posts1,
                             best_posts2=best_posts2)
 
