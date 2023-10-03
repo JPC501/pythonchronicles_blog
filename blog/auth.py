@@ -1,22 +1,23 @@
 """
-Módulo de Autenticación
-------------------------
+Authentication Module
+---------------------
 
-Este módulo define todas las rutas y lógicas relacionadas con
-la autenticación de usuarios.
+This module defines all the routes and logic related to
+user authentication.
 
-Incluye el login, logout, y el registro de usuarios.
+It includes login, logout, and user registration.
 
-Rutas:
+Routes:
     - /register
     - /login
     - /logout
     - /edit_profile
 
-Utiliza el decorador 'login_required' para proteger
-las rutas que necesiten autenticación.
+Uses the 'login_required' decorator to protect
+routes that require authentication.
 
 """
+
 
 from flask import (
     Blueprint,
@@ -92,25 +93,24 @@ def register():
 
 @bp_auth.route("/login", methods=["GET", "POST"])
 def login():
-    """Manejo el ingreso de usuarios previamente registrados.
+    """Handles the login of previously registered users.
 
-    Este endpoint acepta metodos GET para mostrar el
-    formulario de ingreso y POST para procesar la informacion
-    del formulario
+    This endpoint accepts GET methods to display the login
+    form and POST methods to process the form data.
 
     Args:
-        Ninguno pero espera recibir email y password del formulario
-        a traves de POST
+        None, but expects to receive email and password from the form
+        via POST.
 
     Returns:
-        Render_template: Devuelve la plantilla del formulario de
-        ingreso o redirije a la plantilla index en caso de un
-        registro correcto
+        Render_template: Returns the login form template or redirects
+        to the index template in case of a successful login.
 
     Raises:
-        Ninguno: No levanta excepciones explícitas, pero puede flash
-        mensajes de error al iniciar sesion.
+        None: Does not raise explicit exceptions, but may flash
+        error messages upon login failure.
     """
+
     error = None
 
     if request.method == "POST":
