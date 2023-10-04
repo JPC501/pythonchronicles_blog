@@ -183,6 +183,22 @@ def profile():
 @bp_auth.route("/edit_profile/<int:id>", methods=["GET", "POST"])
 @login_required
 def edit_profile(id):
+    """Allow to edit profile from registered users.
+
+    This endpoint accepts GET methods to display the edit view
+    form and POST methods to save the new data.
+
+    Args:
+        id (int): User id.
+
+    Returns:
+        Render_template: Returns the edit form template or redirects
+        to login in case user is not loged.
+
+    Raises:
+        None: Does not raise explicit exceptions, but may flash
+        error messages upon login failure.
+    """
     user = User.query.get_or_404(id)
     if request.method == "POST":
         name = request.form.get("name")
