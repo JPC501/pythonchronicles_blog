@@ -1,5 +1,7 @@
 from flask import (
-    Blueprint, render_template, redirect, request, g, flash, url_for
+    Blueprint, render_template,
+    redirect, request, g, flash,
+    url_for
 )
 from .auth import login_required
 from .models.posts import Posts

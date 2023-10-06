@@ -32,6 +32,10 @@ def create_app(enviroment):
 
     app.register_blueprint(bp_main)
 
+    from .categories.categories_views import bp_categories
+
+    app.register_blueprint(bp_categories)
+
     # db create
     with app.app_context():
         db.init_app(app)

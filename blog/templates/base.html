@@ -79,7 +79,7 @@
                 <div id="mega-menu-icons" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
                     <ul class="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0">
                         <li>
-                            <a href="{{url_for('main.index')}}" class="block py-2 pl-3 pr-4 text-slate-50 border-b border-gray-100 font-bold hover:text-amber-200 md:border-0 tracking-wider md:p-0 " aria-current="page">Home</a>
+                            <a href="{{url_for('main.index')}}" class="block py-2 pl-3 pr-4 text-slate-50 border-b border-gray-100 font-bold hover:text-amber-200 md:border-0 tracking-wider md:p-0 " aria-current="page">Inicio</a>
                         </li>
                         <li>
                             <button id="mega-menu-icons-dropdown-button" data-dropdown-toggle="mega-menu-icons-dropdown" class="flex  items-center justify-between w-full py-2 pl-3 pr-4 font-md font-bold text-slate-50 border-b tracking-wider hover:text-amber-200 border-gray-100 md:w-auto  md:border-0  md:p-0">
@@ -92,12 +92,10 @@
                                 <div class="p-4 pb-0 text-gray-900 md:pb-4 grid  dark:text-white">
                                     <ul class="space-y-4" aria-labelledby="mega-menu-icons-dropdown-button">
                                         <li>
-                                            <a href="#" class="flex items-center text-gray-600 hover:text-gold  group">
-                                                <span class="sr-only ">About us</span>
-                                                <svg class="w-3 h-3 mr-2 text-gray-600  group-hover:text-gold " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
-                                                </svg>
-                                                About Us
+                                            <a href="{{url_for('categories.backend')}}" class="flex items-center text-gray-600 hover:text-gold  group">
+                                                <span class="sr-only ">Backend</span>
+                                                <img class="w-5 h-5 mr-2 text-gray-600  group-hover:text-gold " src="{{url_for('static', filename='images/backend_icon.svg')}}" alt="">
+                                                Backend
                                             </a>
                                         </li>   
 
