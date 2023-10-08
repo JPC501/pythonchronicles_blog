@@ -32,3 +32,15 @@ document.addEventListener("DOMContentLoaded", function () {
         userDropdown.style.display = isOpen ? "block" : "none";
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleLinks = document.querySelectorAll(".toggle-link");
+
+    toggleLinks.forEach((link) => {
+        link.addEventListener("click", function(event) {
+        event.preventDefault();
+        const submenu = this.nextElementSibling;
+        submenu.classList.toggle("hidden");
+        });
+    });
+});
