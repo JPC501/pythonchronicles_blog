@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %} Edit | Pdofile {% endblock %}
+
+{% block style_custom %} 
+    <link rel="stylesheet" href="{{url_for('static', filename='css/edit_profile.css')}}">
+{% endblock %}
+
+{% block content %}
+
+<section class="max-w-screen-xl mx-auto">
+    <div class="profile-container mx-auto column md:flex ">
+        <div class="img-container  w-full flex  md:block justify-center mt-6 ">
+            <img class="img-avatar" src="{{ url_for('static', filename=g.user.photo) if g.user.photo else url_for('static', filename='avatar.png') }}" alt="">
+
+        </div> 
+        
+        <form class="card-form mx-auto" method="POST" enctype="multipart/form-data">
+            <div>
+                <label for="image" class="  block mb-2 text-sm font-medium text-gray-900">Nueva Foto</label>
+                <input type="file" name="image" id="image" class=" file-input  text-gray-900  sm:text-sm rounded-md  block ">
+            </div>
+            <div>
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Nuevo usuario</label>
+                <input type="text" name="name" id="name" class="pl-3 bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="{{g.user.name.capitalize()}}">
+            </div>
+            {% if error %}
+            <p class="alert w-full text-sm">{{error}}</p>
+            {% endif %}
+            <div >
+                <label for="email" class="block mb-2 mt-3 text-sm font-medium text-black">Nuevo Correo</label>
+                <input type="email" name="email" id="email" class="pl-3 bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5" placeholder={{g.user.email.capitalize()}} >
+            </div>
+            <div>
+                <label for="password" class="block mb-2 mt-3 text-sm font-medium text-black">Nueva Conttraseña</label>
+                <input  type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border pl-3 border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+            </div>
+
+            <button type="submit" class=" w-full text-white bg-gradient-to-r from-blue-button-l to-blue-button-r hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 0 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-6 mb-9">Guardar</button>
+    
+        </form>
+    </div>
+</section>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+

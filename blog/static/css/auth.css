@@ -1,0 +1,21 @@
+
+.card-form{
+    background-color: rgb(243, 245, 248);
+    width: 90%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+input{
+    height: 50px;
+}
+
+.alert{
+    color: red;
+}
+
+@media (min-width: 768px)  {
+    .card-form{
+        width: 450px;
+    }
+}

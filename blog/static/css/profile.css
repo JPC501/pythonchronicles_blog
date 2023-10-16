@@ -1,0 +1,113 @@
+.profile-container{
+    width: 95%;
+    
+    
+}
+
+.img-avatar{
+    width: 140px;
+    height: 140px;
+}
+
+a img{
+    width: 30px;
+    height: 30px;
+}
+
+.profile{
+    font-size: 15px;
+    color: rgb(63, 155, 225);
+    text-decoration: dashed;
+}
+.profile:hover{
+    color: rgb(54, 111, 131);
+}
+
+h1{
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+th{
+    font-size: 17px;
+}
+
+.table-container {
+    max-width: 1280px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.table-wrapper {
+    overflow: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.table {
+    width: 100%;
+    text-align: left;
+    border-spacing: 0 15px;
+    color: #ecf3ff;
+}
+
+.table-header {
+    padding: 16px;
+    background-color: #ecf3ff;
+    color: #000000;
+}
+
+.table-row {
+    background-color: #ecf3ff;
+}
+
+.table-cell {
+    padding: 16px;
+    color: #000000;
+}
+
+.cell-content {
+    display: flex;
+    align-items: center;
+}
+
+.cell-img {
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    object-fit: cover;
+}
+
+.cell-text {
+    margin-left: 12px;
+}
+
+.cell-subtext {
+    color: #000000;
+}
+
+.table-cell-bold {
+    font-weight: bold;
+}
+
+.cell-icon {
+    color: #000000;
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.greene:hover{
+    color: rgb(0, 134, 78);
+}
+
+.redi:hover{
+    color: rgb(191, 0, 0);
+}
+
+.material-icons-outlined,
+.material-icons-round {
+    font-size: 16px;
+}
